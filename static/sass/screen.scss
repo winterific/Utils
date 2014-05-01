@@ -4,6 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3";
 @import "base";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -11,9 +12,43 @@ body {
     font-size: $base-font;
     font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
     line-height: 1.2em;
-    color: #333;
-    background-color: white;
+    color: $gray;
+    background-color: $white;
 }
 
-.wrap { @include container; }
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
+h1, h2, h3, h4 { line-height: 1em; margin-bottom: 0.6em; }
+
+textarea {
+    border: $lightgray 1px solid;
+    width: 90%;
+}
+
+.wrap { 
+    @include container; 
+    padding: 0 1em;
+}
+
+header {
+    @include span(100%);
+    margin: 1em 0;
+}
+
+.util {
+    @include span(100%);
+    background-color: $white;
+
+    @include breakpoint($mobile-device) {
+        @include span(6 of 12);
+
+        > div {
+            @include border-radius(0.6em);
+            padding: 0.6em;
+            background-color: $superlightgray;
+        }
+    }
+}
 
