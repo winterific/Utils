@@ -1,0 +1,11 @@
+@import "susy";
+@import "breakpoint";
+
+$base-font: 16px;
+
+$susy: (
+    columns: 12,
+    column-width: 960px /12,
+    gutters: 1/4
+);
+

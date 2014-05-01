@@ -1,0 +1,19 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "base";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-size: $base-font;
+    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+    line-height: 1.2em;
+    color: #333;
+    background-color: white;
+}
+
+.wrap { @include container; }
+
