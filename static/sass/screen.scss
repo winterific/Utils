@@ -6,21 +6,33 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "base";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Noto+Sans);
+
+*, *:before, *:after {
+    -webkit-border-sizing: border-box;
+    -moz-border-sizing: border-box;
+    border-sizing: border-box;
+}
 
 body {
     font-size: $base-font;
-    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+    font-family: "Noto Sans", "Open Sans", "Helvetica", "Arial", sans-serif;
     line-height: 1.2em;
     color: $gray;
     background-color: $white;
+    border-top: 4px solid $maroonPurple;
 }
 
 h1 { font-size: 1.8em; }
 h2 { font-size: 1.6em; }
 h3 { font-size: 1.4em; }
 h4 { font-size: 1.2em; }
-h1, h2, h3, h4 { line-height: 1em; margin-bottom: 0.6em; }
+h1, h2, h3, h4 { display: inline-block; line-height: 1em; margin-bottom: 0.6em; padding-bottom: 0.2em; border-bottom: 1px solid $lightPink; }
+
+p {
+    display: block;
+    margin-bottom: 0.4em;
+}
 
 textarea {
     border: $lightgray 1px solid;
@@ -29,7 +41,7 @@ textarea {
 
 .wrap { 
     @include container; 
-    padding: 0 1em;
+    padding: 0 0.6em;
 }
 
 header {
@@ -39,16 +51,16 @@ header {
 
 .util {
     @include span(100%);
-    background-color: $white;
+
+    > div {
+        @include border-radius(0.4em);
+        padding: 0.6em;
+        background-color: $superDuperLightGray;
+        border: 1px dotted $lightPink;
+    }
 
     @include breakpoint($mobile-device) {
         @include span(6 of 12);
-
-        > div {
-            @include border-radius(0.6em);
-            padding: 0.6em;
-            background-color: $superlightgray;
-        }
     }
 }
 
